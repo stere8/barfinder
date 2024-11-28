@@ -3,10 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:universal_platform/universal_platform.dart';
 import 'screens/home_screen.dart';
 
-void main() async {  // Note the async keyword
-  WidgetsFlutterBinding.ensureInitialized();  // This is needed for Firebase
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
 
-  // Only initialize Firebase if not on Windows
   if (!UniversalPlatform.isWindows) {
     try {
       await Firebase.initializeApp();
