@@ -1,4 +1,4 @@
-package com.example.barfinder
+package app.netlify.oracleconsults.barfinder
 
 import io.flutter.embedding.android.FlutterActivity
 

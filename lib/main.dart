@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:universal_platform/universal_platform.dart';
 import 'screens/home_screen.dart';
 
-void main() {
+void main() async {  // Note the async keyword
+  WidgetsFlutterBinding.ensureInitialized();  // This is needed for Firebase
+
+  // Only initialize Firebase if not on Windows
+  if (!UniversalPlatform.isWindows) {
+    try {
+      await Firebase.initializeApp();
+    } catch (e) {
+      print('Failed to initialize Firebase: $e');
+    }
+  }
+
   runApp(const MyApp());
 }
 
